@@ -1,5 +1,5 @@
 import DefaultLayout from "~/layouts/Default.vue";
-import "bootstrap";
+
 import "./styles/main.scss";
 
 export default function(Vue, { router, head, isClient }) {
