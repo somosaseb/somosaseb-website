@@ -29,7 +29,7 @@
 <script>
 import Card from "../components/Card.vue";
 import Banner from "../components/Banner.vue";
-import Pricing from "./IndexPricing.vue";
+import Pricing from "../components/Pricing.vue";
 
 const bannerImage =
   "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3750&q=80";
