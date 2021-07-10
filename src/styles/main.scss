@@ -1,0 +1,20 @@
+:root {
+  --themecolor: #267df4;
+  --themecolorrgba: 38, 125, 244;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.component {
+  // src/components/Banner.vue
+  &.banner {
+    background-size: cover;
+    padding: 2rem 0;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      padding: 0;
+      height: 420px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "somosaseb-website",
+  "private": true,
+  "scripts": {
+    "develop": "gridsome develop",
+    "explore": "gridsome explore",
+    "build": "gridsome build"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.0-beta3",
+    "gridsome": "^0.7.0"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "sass-loader": "^10.2.0"
+  }
+}
