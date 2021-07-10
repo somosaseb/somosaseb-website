@@ -18,12 +18,12 @@
         </svg>
       </a>
 
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-4 link-secondary">Inicio</a></li>
-        <li><a href="#" class="nav-link px-4 link-dark">Información</a></li>
-        <li><a href="#" class="nav-link px-4 link-dark">Eventos</a></li>
-        <li><a href="#" class="nav-link px-4 link-dark">Articulos</a></li>
-        <li><a href="#" class="nav-link px-4 link-dark">Comunidad</a></li>
+      <ul id="navigation">
+        <li><g-link to="/" exact>Inicio</g-link></li>
+        <li><g-link to="/about/">Información</g-link></li>
+        <li><g-link to="/events/">Eventos</g-link></li>
+        <li><g-link to="/articles/">Articulos</g-link></li>
+        <li><g-link to="/blog/">Comunidad</g-link></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -39,5 +39,3 @@
 <script>
 export default {};
 </script>
-
-<style></style>
