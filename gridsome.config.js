@@ -1,7 +1,4 @@
 const path = require("path");
-const glob = require("glob");
-
-const PurgeCSSPlugin = require("purgecss-webpack-plugin");
 const productionPlugins = [];
 const webpackProductionPlugins = [];
 
@@ -52,12 +49,6 @@ if (process.env.CI == "1") {
       height: 900,
     },
   });
-
-  webpackProductionPlugins.push(
-    new PurgeCSSPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-    })
-  );
 }
 
 module.exports = {

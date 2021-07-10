@@ -12,9 +12,9 @@
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.0-beta3",
+    "glob-all": "^3.2.1",
     "gridsome": "^0.7.0",
-    "gridsome-plugin-manifest": "^0.3.5",
-    "purgecss-webpack-plugin": "^4.0.3"
+    "gridsome-plugin-manifest": "^0.3.5"
   },
   "devDependencies": {
     "node-sass": "^6.0.1",
