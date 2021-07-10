@@ -2,7 +2,7 @@
   <div>
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
-        <Card heading="Miembros">
+        <Card class="card-accent" heading="Miembros">
           <h1 class="card-title">
             Bs. 0<small class="text-muted fw-light">/mes</small>
           </h1>
@@ -12,7 +12,7 @@
             <li>Email support</li>
             <li>Help center access</li>
           </ul>
-          <button type="button" class="w-100 btn btn-lg btn-outline-primary">
+          <button type="button" class="w-100 btn btn-lg btn-accent">
             Sign up for free
           </button>
         </Card>
@@ -44,21 +44,10 @@
             <li>Email support</li>
             <li>Help center access</li>
           </ul>
-          <button type="button" class="w-100 btn btn-lg btn-outline-primary">
+          <button type="button" class="w-100 btn btn-lg btn-secondary">
             Sign up for free
           </button>
         </Card>
-      </div>
-    </div>
-
-    <div class="pa-4">
-      <div class="d-flex justify-content-between">
-        <div class="fs-4 fw-lighter">
-          Estas esperando más beneficios de ASEB.
-        </div>
-        <button type="button" class="btn btn-lg btn-outline-primary">
-          Contactanos
-        </button>
       </div>
     </div>
   </div>

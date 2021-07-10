@@ -27,7 +27,7 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">
+        <button type="button" class="btn btn-accent me-2">
           Registrarte
         </button>
         <button type="button" class="btn btn-primary">Miembros</button>

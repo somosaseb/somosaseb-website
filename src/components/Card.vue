@@ -1,6 +1,6 @@
 <template>
   <div
-    class="card mb-4 rounded-3 shadow-sm"
+    class="card mb-4 shadow-sm"
     :class="{ 'border-primary': primary, 'shadow-lg': primary }"
   >
     <div

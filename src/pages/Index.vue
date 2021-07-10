@@ -1,18 +1,18 @@
 <template>
   <Layout>
     <div class="container">
-      <div class="row">
-        <div class="col-md-7">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="w-50">
           <h2 class="display-4">
             We are making better CoWorking for you.
           </h2>
         </div>
-        <div class="col-md-5">
-          <p class="lead text-muted">
+        <div class="w-50">
+          <div class="lead text-muted">
             Collaboratively coordinate adaptive synergy with compelling "outside
             the box" thinking. Continually recaptiualize user friendly sources
             whereas leveraged.
-          </p>
+          </div>
         </div>
       </div>
     </div>
