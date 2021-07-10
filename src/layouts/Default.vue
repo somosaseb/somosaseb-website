@@ -2,11 +2,11 @@
   <div class="layout">
     <Header />
 
-    <section>
-      <transition name="fade" appear>
+    <transition name="fade" appear>
+      <section>
         <slot />
-      </transition>
-    </section>
+      </section>
+    </transition>
 
     <Footer />
   </div>
