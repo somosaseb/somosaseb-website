@@ -1,6 +1,6 @@
 import DefaultLayout from "~/layouts/Default.vue";
 
-import "./styles/main.scss";
+import "./assets/scss/main.scss";
 
 export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: "es" };

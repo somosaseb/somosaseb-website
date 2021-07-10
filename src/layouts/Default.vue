@@ -3,7 +3,9 @@
     <Header />
 
     <section>
-      <slot />
+      <transition name="fade" appear>
+        <slot />
+      </transition>
     </section>
 
     <Footer />
@@ -25,3 +27,12 @@ export default {
   components: { Header, Footer },
 };
 </script>
+
+<style>
+.fade-enter-active {
+  transition: opacity 0.25s;
+}
+.fade-enter {
+  opacity: 0;
+}
+</style>
