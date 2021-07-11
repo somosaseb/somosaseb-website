@@ -20,8 +20,8 @@ query {
 }
 </static-query>
 <script>
-import Header from "./Header.vue";
-import Footer from "./Footer.vue";
+import Header from "./partials/Header.vue";
+import Footer from "./partials/Footer.vue";
 
 export default {
   components: { Header, Footer },
