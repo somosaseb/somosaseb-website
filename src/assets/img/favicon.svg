@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ASEB Logo / Small</title>
+    <g id="ASEB-Logo-/-Small" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Rectangle" fill="#E54C49" points="19.1801998 6 27.1774809 6 32 13 13 13"></polygon>
+        <polygon id="Rectangle" fill="#E52925" points="13 0 19.1801998 6 13 13"></polygon>
+        <polygon id="Rectangle" fill="#FFD869" transform="translate(22.503504, 22.494132) rotate(-270.000000) translate(-22.503504, -22.494132) " points="19.1837039 18.9941319 27.180985 18.9941319 32.0035041 25.9941319 13.0035041 25.9941319"></polygon>
+        <polygon id="Rectangle" fill="#FEC82E" transform="translate(25.503504, 16.084232) rotate(-270.000000) translate(-25.503504, -16.084232) " points="22.4134042 9.58423178 28.593604 15.5842318 22.4134042 22.5842318"></polygon>
+        <polygon id="Rectangle" fill="#FFD869" transform="translate(9.494295, 9.500000) rotate(-90.000000) translate(-9.494295, -9.500000) " points="5.99429479 5.99429479 14.0286612 5.99429479 18.9942948 13.0057052 -0.00570520847 12.9942948"></polygon>
+        <polygon id="Rectangle" fill="#FEC82E" transform="translate(6.488590, 16.000000) rotate(-90.000000) translate(-6.488590, -16.000000) " points="3.48858958 9.5 9.48858958 15.5 3.48858958 22.5"></polygon>
+        <polygon id="Rectangle" fill="#26915A" transform="translate(9.490032, 22.504216) rotate(-180.000000) translate(-9.490032, -22.504216) " points="5.99003238 18.9985105 14.0243988 18.9985105 18.9900324 26.0099209 -0.00996762061 25.9985105"></polygon>
+        <polygon id="Rectangle" fill="#18864E" transform="translate(15.997300, 25.498975) rotate(-180.000000) translate(-15.997300, -25.498975) " points="12.9973004 18.9989745 18.9973004 24.9989745 12.9973004 31.9989745"></polygon>
+    </g>
+</svg>

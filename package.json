@@ -14,10 +14,12 @@
     "bootstrap": "^5.0.0-beta3",
     "glob-all": "^3.2.1",
     "gridsome": "^0.7.0",
-    "gridsome-plugin-manifest": "^0.3.5"
+    "gridsome-plugin-manifest": "^0.3.5",
+    "svg-to-vue-component": "^0.3.8"
   },
   "devDependencies": {
     "node-sass": "^6.0.1",
-    "sass-loader": "^10.2.0"
+    "sass-loader": "^10.2.0",
+    "vue-svg-loader": "^0.16.0"
   }
 }

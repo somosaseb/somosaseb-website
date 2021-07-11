@@ -80,15 +80,10 @@ $card-border-radius: 0;
 }
 
 #navigation {
-  @extend .nav;
-  @extend .col-12;
-  @extend .col-md-auto;
   @extend .mb-2;
-  @extend .justify-content-center;
   @extend .mb-md-0;
 
   li > a {
-    @extend .nav-link;
     @extend .px-4;
     @extend .link-dark;
     font-weight: 500;

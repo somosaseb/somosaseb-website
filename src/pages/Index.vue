@@ -1,13 +1,13 @@
 <template>
   <Layout>
     <div class="container">
-      <div class="d-flex justify-content-center align-items-center">
-        <div class="w-50">
+      <div class="d-flex row justify-content-center align-items-center">
+        <div class="col-12 col-sm-6">
           <h2 class="display-4">
             We are making better CoWorking for you.
           </h2>
         </div>
-        <div class="w-50">
+        <div class="col-12 col-sm-6">
           <div class="lead text-muted">
             Collaboratively coordinate adaptive synergy with compelling "outside
             the box" thinking. Continually recaptiualize user friendly sources
