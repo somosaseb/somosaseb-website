@@ -6,6 +6,7 @@ import HeroImage from "~/components/HeroImage.vue";
 import TextHeading from "~/components/TextHeading.vue";
 import TextLead from "~/components/TextLead.vue";
 import BlogSummary from "~/components/BlogSummary.vue";
+import NewsLink from "~/components/NewsLink.vue";
 
 import "./assets/scss/main.scss";
 
@@ -31,4 +32,5 @@ export default function(Vue, { router, head, isClient }) {
   Vue.component("HeroImage", HeroImage);
   Vue.component("TextHeading", TextHeading);
   Vue.component("TextLead", TextLead);
+  Vue.component("NewsLink", NewsLink);
 }

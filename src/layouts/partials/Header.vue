@@ -33,10 +33,10 @@
             <g-link class="nav-link" to="/events/">Eventos</g-link>
           </li>
           <li class="nav-link col-6 col-md-auto">
-            <g-link class="nav-link" to="/articles/">Articulos</g-link>
+            <g-link class="nav-link" to="/blog/">Artículos</g-link>
           </li>
           <li class="nav-link col-6 col-md-auto">
-            <g-link class="nav-link" to="/blog/">Comunidad</g-link>
+            <g-link class="nav-link" to="/news/">Noticias</g-link>
           </li>
         </ul>
       </nav>

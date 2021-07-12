@@ -85,6 +85,10 @@ body {
   @include button-variant($orange-300, $orange-300, $orange-900);
 }
 
+.bg-accent {
+  background-color: lighten(desaturate($orange-300, 50%), 15%);
+}
+
 h1,
 h2,
 h3,
