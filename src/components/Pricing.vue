@@ -20,7 +20,7 @@
       <div class="col">
         <Card heading="Socios" primary>
           <h1 class="card-title">
-            Bs. 700 <small class="text-muted fw-light">/mes</small>
+            Bs. 700<small class="text-muted fw-light">/mes</small>
           </h1>
           <ul class="list-unstyled mt-3 mb-4">
             <li>10 users included</li>

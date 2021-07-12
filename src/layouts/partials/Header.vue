@@ -1,25 +1,27 @@
 <template>
-  <header class="navbar navbar-expand-lg  border-bottom py-3 mb-4">
-    <div class="container">
-      <a class="navbar-brand" href="/">
-        <Logo />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        @click="$utils.toggleClass('#navbarToggle', 'show')"
-        data-bs-target="#navbarToggle"
-        aria-controls="navbarToggle"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <MenuSvg />
-      </button>
+  <header class="navbar navbar-expand-lg py-3 mb-4">
+    <div class="container font-raleway fs-5">
+      <div class="col-12 row mx-0 col-md-3">
+        <a class="navbar-brand col-auto flex-grow-1 d-flex" href="/">
+          <Logo />
+        </a>
+        <button
+          class="navbar-toggler col-auto"
+          type="button"
+          @click="$utils.toggleClass('#navbarToggle', 'show')"
+          data-bs-target="#navbarToggle"
+          aria-controls="navbarToggle"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <MenuSvg />
+        </button>
+      </div>
 
-      <nav id="navbarToggle" class="flex collapse navbar-collapse">
+      <nav id="navbarToggle" class="collapse navbar-collapse fw-semibold">
         <ul
           id="navigation"
-          class="navbar-nav d-flex flex-row flex-wrap flex-grow-1 my-4 my-md-0"
+          class="navbar-nav d-flex justify-content-md-center flex-row flex-wrap flex-grow-1 my-4 my-md-0"
         >
           <li class="nav-link col-6 col-md-auto">
             <g-link class="nav-link" to="/" exact>Inicio</g-link>
@@ -37,16 +39,16 @@
             <g-link class="nav-link" to="/blog/">Comunidad</g-link>
           </li>
         </ul>
-
-        <div
-          class="d-flex flex-grow-1 justify-content-center justify-content-md-end"
-        >
-          <button type="button" class="btn btn-accent me-2">
-            Registrarte
-          </button>
-          <button type="button" class="btn btn-primary">Miembros</button>
-        </div>
       </nav>
+
+      <div
+        class="button-actions d-flex mt-4 mt-md-0 col-md-3 justify-content-center justify-content-md-end"
+      >
+        <button type="button" class="btn btn-accent me-2">
+          Registrarte
+        </button>
+        <button type="button" class="btn btn-primary">Miembros</button>
+      </div>
     </div>
   </header>
 </template>
@@ -58,3 +60,16 @@ export default {
   components: { Logo, MenuSvg },
 };
 </script>
+
+<style lang="scss" scoped>
+.button-actions {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .button-actions {
+    width: auto;
+    align-items: center;
+  }
+}
+</style>

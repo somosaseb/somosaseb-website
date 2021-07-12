@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer bg-light mt-5">
+  <footer class="footer bg-dark text-lighter">
     <div class="container">
       <div class="row py-5">
         <div class="col-lg-3 mb-3">
@@ -50,6 +50,7 @@ export default {};
 <style scoped>
 .footer {
   color: #495057;
+  margin-top: 10rem;
 }
 
 .footer a {

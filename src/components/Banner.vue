@@ -1,9 +1,10 @@
 <template>
   <div
     class="component banner overflow-hidden d-flex align-items-center"
+    :class="{ container, rounded: container, shadow: container }"
     :style="bannerStyles"
   >
-    <div class="container">
+    <div v-if="hasChildren" class="container">
       <div class="row">
         <div class="col-lg-6">
           <div class="bg-dark p-4 rounded">
@@ -19,11 +20,31 @@
 
 <script>
 export default {
-  props: { imageUrl: String },
+  props: {
+    imageUrl: String,
+    container: {
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
+  },
   computed: {
     bannerStyles() {
-      return `background-image: url('${this.imageUrl}'); `;
+      return `
+        background-image: url('${this.imageUrl}');
+        background-size: cover;
+      `;
+    },
+    hasChildren() {
+      return !!this.$slots.default;
     },
   },
 };
 </script>
+
+<style scoped>
+.banner {
+  min-height: 24rem;
+}
+</style>
