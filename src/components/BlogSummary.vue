@@ -1,34 +1,36 @@
 <template>
-  <div :class="containerClass" class="mb-5">
-    <div :class="columnImageClass" class="text-center">
-      <a :href="url">
-        <img
-          :src="imageUrl"
-          class="rounded img-fluid"
-          :class="imageClass"
-          width="auto"
-        />
-      </a>
-    </div>
-    <div :class="columnTextClass">
-      <div class="mt-3">
-        <a
-          v-for="(tag, n) in tags"
-          v-bind:key="n"
-          :href="`tags/${tag}`"
-          class="me-1 text-white badge rounded-pill bg-primary"
-        >
-          {{ tag }}
+  <div class=" mb-5">
+    <div :class="containerClass">
+      <div :class="columnImageClass" class="text-center">
+        <a :href="url">
+          <img
+            :src="imageUrl"
+            class="rounded img-fluid"
+            :class="imageClass"
+            width="auto"
+          />
         </a>
       </div>
-      <a :href="url">
-        <h3 class="mt-3">{{ title }}</h3>
-      </a>
-      <p :class="vertical ? '' : 'lead'">
-        {{ summary }}
-      </p>
-      <div>
-        <em>{{ publishedAt }}</em>
+      <div :class="columnTextClass">
+        <div class="mt-3">
+          <a
+            v-for="(tag, n) in tags"
+            v-bind:key="n"
+            :href="`tags/${tag}`"
+            class="me-1 text-white badge rounded-pill bg-primary"
+          >
+            {{ tag }}
+          </a>
+        </div>
+        <a :href="url">
+          <h3 class="mt-3">{{ title }}</h3>
+        </a>
+        <p :class="vertical ? '' : 'lead'">
+          {{ summary }}
+        </p>
+        <div>
+          <em>{{ publishedAt }}</em>
+        </div>
       </div>
     </div>
   </div>
@@ -63,15 +65,12 @@ export default {
   computed: {
     containerClass() {
       if (this.vertical) {
-        return ["row", "row-cols-1"];
+        return ["row", "row-cols-1", "vertical"];
       } else {
-        return ["row"];
+        return ["row", "row-cols-2", "horizontal"];
       }
     },
     columnImageClass() {
-      if (!this.vertical) {
-        return "col-6";
-      }
       return "col";
     },
     columnTextClass() {
@@ -82,12 +81,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.x-row {
-  display: flex;
-  flex-direction: column;
+.horizontal div.col {
+  flex: 0 0 auto;
+  width: 50% !important;
 
   @media (max-width: 767.98px) {
-    flex-direction: row;
+    flex: 0 0 auto;
+    width: 100% !important;
   }
 }
 </style>
