@@ -7,6 +7,9 @@ import TextHeading from "~/components/TextHeading.vue";
 import TextLead from "~/components/TextLead.vue";
 import BlogSummary from "~/components/BlogSummary.vue";
 import NewsLink from "~/components/NewsLink.vue";
+import EventSummary from "~/components/EventSummary.vue";
+import StaffList from "~/components/StaffList.vue";
+import Faq from "~/components/Faq.vue";
 
 import "./assets/scss/main.scss";
 
@@ -33,4 +36,7 @@ export default function(Vue, { router, head, isClient }) {
   Vue.component("TextHeading", TextHeading);
   Vue.component("TextLead", TextLead);
   Vue.component("NewsLink", NewsLink);
+  Vue.component("EventSummary", EventSummary);
+  Vue.component("StaffList", StaffList);
+  Vue.component("Faq", Faq);
 }

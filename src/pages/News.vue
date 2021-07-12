@@ -3,7 +3,9 @@
     <div class="container">
       <div class="row gx-5">
         <div class="col">
-          <a href="#" class="btn btn-primary">Envia tus noticias</a>
+          <div class="mb-5">
+            <a href="#" class="btn btn-primary">Envia tus noticias</a>
+          </div>
         </div>
         <div class="col-sm-7">
           <div class="mb-4">

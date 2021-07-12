@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar navbar-expand-lg py-3 mb-4">
+  <header class="navbar navbar-expand-lg border-bottom py-3 mb-5">
     <div class="container font-raleway fs-5">
       <div class="col-12 row mx-0 col-md-3">
         <a class="navbar-brand col-auto flex-grow-1 d-flex" href="/">

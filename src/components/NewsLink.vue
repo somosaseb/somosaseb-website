@@ -24,7 +24,7 @@
 
     <div class="side-col">
       <a :href="url" target="blank">
-        <img :src="imageUrl" :alt="title" class=" rounded" />
+        <img :src="imageUrl" :alt="title" class="rounded" />
       </a>
     </div>
   </div>
@@ -62,7 +62,9 @@ export default {
 
   img {
     @media (min-width: 767.98px) {
+      background: white;
       width: 10rem;
+      height: 10rem;
     }
   }
 }
