@@ -1,7 +1,7 @@
 <template>
   <header class="navbar navbar-expand-lg border-bottom py-3 mb-5">
     <div class="container font-raleway fs-5">
-      <div class="col-12 row mx-0 col-md-3">
+      <div class="col-12 row mx-0 col-md-2">
         <a class="navbar-brand col-auto flex-grow-1 d-flex" href="/">
           <Logo />
         </a>
@@ -21,7 +21,7 @@
       <nav id="navbarToggle" class="collapse navbar-collapse fw-semibold">
         <ul
           id="navigation"
-          class="navbar-nav d-flex justify-content-md-center flex-row flex-wrap flex-grow-1 my-4 my-md-0"
+          class="navbar-nav d-flex flex-row flex-wrap flex-grow-1 my-4 my-md-0"
         >
           <li class="nav-link col-6 col-md-auto">
             <g-link class="nav-link" to="/" exact>Inicio</g-link>
@@ -42,7 +42,7 @@
       </nav>
 
       <div
-        class="button-actions d-flex mt-4 mt-md-0 col-md-3 justify-content-center justify-content-md-end"
+        class="button-actions d-flex flex-column flex-xl-row mt-4 mt-md-0 col-md-3 justify-content-center justify-content-md-end"
       >
         <button type="button" class="btn btn-accent me-2">
           Registrarte
