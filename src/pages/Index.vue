@@ -1,11 +1,5 @@
 <template>
   <Layout>
-    <HeroText highlight="Seamlessly create covalent clouds">
-      Collaboratively coordinate adaptive synergy with compelling "outside the
-      box" thinking. Continually recaptiualize user friendly sources whereas
-      leveraged.
-    </HeroText>
-
     <Banner
       imageUrl="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1750&q=80"
       class="my-5"

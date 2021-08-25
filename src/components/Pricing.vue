@@ -7,7 +7,7 @@
             Bs. 0<small class="text-muted fw-light">/mes</small>
           </h1>
           <ul class="list-unstyled mt-3 mb-4">
-            <li>10 users included</li>
+            <li>Acceso a noticias</li>
             <li>2 GB of storage</li>
             <li>Email support</li>
             <li>Help center access</li>

@@ -7,7 +7,7 @@
         </h2>
       </div>
       <div class="col-12 col-sm-6">
-        <div class="lead text-mute ">
+        <div class="lead text-mute">
           <slot />
         </div>
       </div>
