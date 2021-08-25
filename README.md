@@ -1,6 +1,7 @@
 # ASEB Bolivi
 
-Test site: https://modest-leavitt-2360a0.netlify.app
+Test site: https://somosaseb-website.netlify.app
+
 Production site: https://somosaseb.bo/
 
 ### 1. Install Gridsome CLI tool if you don't have
