@@ -1,4 +1,4 @@
-# ASEB Bolivi
+# ASEB Bolivia
 
 Test site: https://somosaseb-website.netlify.app
 
