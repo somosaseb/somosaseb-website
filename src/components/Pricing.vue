@@ -13,7 +13,7 @@
             <li>Help center access</li>
           </ul>
           <button type="button" class="w-100 btn btn-lg btn-accent">
-            Registrate
+            Regístrate
           </button>
         </Card>
       </div>
@@ -29,7 +29,7 @@
             <li>Help center access</li>
           </ul>
           <button type="button" class="w-100 btn btn-lg btn-primary">
-            Registrate
+            Regístrate
           </button>
         </Card>
       </div>
@@ -45,7 +45,7 @@
             <li>Help center access</li>
           </ul>
           <button type="button" class="w-100 btn btn-lg btn-secondary">
-            Registrate
+            Regístrate
           </button>
         </Card>
       </div>
