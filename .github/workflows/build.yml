@@ -15,8 +15,7 @@ jobs:
     environment:
       name: default
       url: "${{ steps.deploy.outputs.deploy_url }}"
-    env:
-      NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
+
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -28,8 +27,13 @@ jobs:
       - run: npm run build
       - run: find dist/ -type f
       - id: deploy
+        env:
+          NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
+          NETLIFY_SITE_ID: "${{ secrets.NETLIFY_SITE_ID }}"
         run: |
-          OUT="$(netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod)";
-          echo "::set-output name=deploy_id::$(echo $OUT | jq -r '.deploy_id')";
-          echo "::set-output name=deploy_url::$(echo $OUT | jq -r '.deploy_url')";
-          echo "::set-output name=logs::$(echo $OUT | jq -r '.logs')";
+          set -eux
+          netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod | tee deploy.json
+          cat deploy.json
+          echo "::set-output name=deploy_id::$(jq -r '.deploy_id' deploy.json)"
+          echo "::set-output name=deploy_url::$(jq -r '.deploy_url' deploy.json)"
+          echo "::set-output name=logs::$(jq -r '.logs' deploy.json)"
