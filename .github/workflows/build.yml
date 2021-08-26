@@ -26,8 +26,8 @@ jobs:
       - run: npm run build
       - run: find dist/ -type f
       - id: random-number-generator
-        run: >-
-          OUT=$(netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod);
-          echo "::set-output name=deploy_id::$(echo $OUT | jq -r ".deploy_id")"
-          echo "::set-output name=deploy_url::$(echo $OUT | jq -r ".deploy_url")"
-          echo "::set-output name=logs::$(echo $OUT | jq -r ".logs")"
+        run: |
+          OUT="$(netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod)";
+          echo "::set-output name=deploy_id::$(echo $OUT | jq -r '.deploy_id')";
+          echo "::set-output name=deploy_url::$(echo $OUT | jq -r '.deploy_url')";
+          echo "::set-output name=logs::$(echo $OUT | jq -r '.logs')";
