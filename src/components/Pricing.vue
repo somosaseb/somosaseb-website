@@ -13,7 +13,7 @@
             <li>Help center access</li>
           </ul>
           <button type="button" class="w-100 btn btn-lg btn-accent">
-            Sign up for free
+            Registrate
           </button>
         </Card>
       </div>
@@ -29,7 +29,7 @@
             <li>Help center access</li>
           </ul>
           <button type="button" class="w-100 btn btn-lg btn-primary">
-            Sign up for free
+            Registrate
           </button>
         </Card>
       </div>
@@ -45,7 +45,7 @@
             <li>Help center access</li>
           </ul>
           <button type="button" class="w-100 btn btn-lg btn-secondary">
-            Sign up for free
+            Registrate
           </button>
         </Card>
       </div>
