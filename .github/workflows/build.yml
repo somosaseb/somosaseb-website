@@ -8,10 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      deploy_id: "${{ steps.deploy.outputs.deploy_id }}"
-      deploy_url: "${{ steps.deploy.outputs.deploy_url }}"
-      logs: "${{ steps.deploy.outputs.logs }}"
     environment:
       name: default
       url: "${{ steps.deploy.outputs.deploy_url }}"
