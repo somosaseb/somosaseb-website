@@ -9,12 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      deploy_id: "${{ steps.build.outputs.deploy_id }}"
-      deploy_url: "${{ steps.build.outputs.deploy_url }}"
-      logs: "${{ steps.build.outputs.logs }}"
+      deploy_id: "${{ steps.deploy.outputs.deploy_id }}"
+      deploy_url: "${{ steps.deploy.outputs.deploy_url }}"
+      logs: "${{ steps.deploy.outputs.logs }}"
     environment:
       name: default
-      url: https://somosaseb-website.netlify.app
+      url: "${{ steps.deploy.outputs.deploy_url }}"
+    env:
+      NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -25,7 +27,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: find dist/ -type f
-      - id: random-number-generator
+      - id: deploy
         run: |
           OUT="$(netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod)";
           echo "::set-output name=deploy_id::$(echo $OUT | jq -r '.deploy_id')";
