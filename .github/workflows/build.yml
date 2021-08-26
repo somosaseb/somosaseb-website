@@ -17,6 +17,13 @@ jobs:
         with:
           node-version: 16.x
           cache: "npm"
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - run: npm install -g netlify-cli
       - run: npm ci
       - run: npm run build
