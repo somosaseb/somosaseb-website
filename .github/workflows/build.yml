@@ -16,10 +16,11 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: "npm"
       - uses: actions/cache@v2
         with:
-          path: ~/.npm
+          path: |
+            ~/.npm
+            node_modules
           key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-
