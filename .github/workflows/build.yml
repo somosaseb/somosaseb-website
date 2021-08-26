@@ -9,12 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      deploy_id:
-        value: "${{ steps.build.outputs.deploy_id }}"
-      deploy_url:
-        value: "${{ steps.build.outputs.deploy_url }}"
-      logs:
-        value: "${{ steps.build.outputs.logs }}"
+      deploy_id: "${{ steps.build.outputs.deploy_id }}"
+      deploy_url: "${{ steps.build.outputs.deploy_url }}"
+      logs: "${{ steps.build.outputs.logs }}"
     environment:
       name: default
       url: https://somosaseb-website.netlify.app
