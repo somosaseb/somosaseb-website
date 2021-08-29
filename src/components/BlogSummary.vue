@@ -6,7 +6,7 @@
           <img
             :src="imageUrl"
             class="rounded img-fluid"
-            :class="imageClass"
+            :class="columnImageClass"
             width="auto"
           />
         </a>
@@ -16,7 +16,7 @@
           <a
             v-for="(tag, n) in tags"
             v-bind:key="n"
-            :href="`tags/${tag}`"
+            :href="`/tags/${tag}`"
             class="me-1 text-white badge rounded-pill bg-primary"
           >
             {{ tag }}
@@ -50,10 +50,7 @@ export default {
       },
     },
     publishedAt: {
-      type: Date,
-      default() {
-        return new Date();
-      },
+      type: String,
     },
     vertical: {
       type: Boolean,

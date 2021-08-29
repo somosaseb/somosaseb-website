@@ -55,7 +55,82 @@ module.exports = {
   siteName: "ASEB Bolivia",
   siteUrl: "https://somosaseb.bo",
   titleTemplate: "%s - ASEB Bolivia",
-  plugins: [...productionPlugins],
+  plugins: [
+    ...productionPlugins,
+    {
+      use: "@gridsome/plugin-sitemap",
+      options: {
+        include: ["/", "/blog/**"],
+      },
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/articles/**/*.md",
+        typeName: "Article",
+        resolveAbsolutePaths: true,
+        refs: {
+          tags: {
+            typeName: "Tag",
+            create: true,
+          },
+        },
+        remark: {
+          externalLinksTarget: "_blank",
+          externalLinksRel: ["nofollow", "noopener", "noreferrer"],
+        },
+      },
+    },
+    {
+      use: "gridsome-plugin-feed",
+      options: {
+        contentTypes: ["Article"],
+        feedOptions: {
+          title: "ASEB Articulos",
+        },
+        rss: {
+          enabled: true,
+          output: "/feed.xml",
+        },
+        atom: {
+          enabled: false,
+          output: "/feed.atom",
+        },
+        json: {
+          enabled: false,
+          output: "/feed.json",
+        },
+        maxItems: 50,
+        htmlFields: ["description", "content"],
+        enforceTrailingSlashes: false,
+        filterNodes: (node) => true,
+        nodeToFeedItem: (node) => ({
+          title: node.title,
+          date: node.date || node.fields.date,
+          content: node.content,
+        }),
+      },
+    },
+  ],
+  transformers: {
+    remark: {
+      plugins: ["@gridsome/remark-prismjs"],
+    },
+  },
+  templates: {
+    Article: [
+      {
+        path: "/articles/:title",
+        componenent: "~/templates/Article.vue",
+      },
+    ],
+    Tag: [
+      {
+        path: "/tags/:id",
+        componenent: "~/templates/Tag.vue",
+      },
+    ],
+  },
   configureWebpack: {
     plugins: [...webpackProductionPlugins],
   },
