@@ -60,7 +60,7 @@ module.exports = {
     {
       use: "@gridsome/plugin-sitemap",
       options: {
-        include: ["/", "/blog/**"],
+        include: ["/", "/articles/**"],
       },
     },
     {
