@@ -10,9 +10,7 @@
 
           <span class="px-xs-5"> Date: {{ $page.article.date }} </span>
           <div class="pa-xs-5 body-1">
-            <div>
-              {{ $page.article.content }}
-            </div>
+            <div v-html="$page.article.content"></div>
           </div>
         </article>
       </div>
