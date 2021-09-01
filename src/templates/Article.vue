@@ -2,19 +2,20 @@
   <Layout>
     <div class="container">
       <img height="500px" :src="$page.article.mainImage.src" />
+      <div class="row justify-content-center">
+        <article class="col-md-8">
+          <h3 class="mx-0 px-xs-5">
+            {{ $page.article.title }}
+          </h3>
 
-      <article>
-        <h3 class="primary--text font-weight-bold mx-0 display-2 px-xs-5">
-          {{ $page.article.title }}
-        </h3>
-
-        <span class="px-xs-5"> Date: {{ $page.article.date }} </span>
-        <div class="pa-xs-5 body-1">
-          <div>
-            {{ $page.article.content }}
+          <span class="px-xs-5"> Date: {{ $page.article.date }} </span>
+          <div class="pa-xs-5 body-1">
+            <div>
+              {{ $page.article.content }}
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </Layout>
 </template>
@@ -37,3 +38,9 @@ export default {
   components: {},
 };
 </script>
+
+<style scoped>
+h3 {
+  font-size: 2rem;
+}
+</style>
