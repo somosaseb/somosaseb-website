@@ -1,5 +1,5 @@
 <template>
-  <div class=" mb-5">
+  <div class="mb-5">
     <div :class="containerClass">
       <div :class="columnImageClass" class="text-center">
         <a :href="url">
@@ -86,5 +86,9 @@ export default {
     flex: 0 0 auto;
     width: 100% !important;
   }
+}
+
+a {
+  text-decoration: none;
 }
 </style>
