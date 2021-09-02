@@ -1,6 +1,13 @@
 name: Build base docker image
 
 on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - '**/*'
+      - '*'
+      - '!package.json'
+      - '!package-lock.json'
   workflow_dispatch:
 
 jobs:
