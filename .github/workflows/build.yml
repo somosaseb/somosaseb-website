@@ -12,7 +12,7 @@ jobs:
       image: ghcr.io/somosaseb/somosaseb-website/base:latest
     environment:
       name: default
-      url: "${{ steps.deploy.outputs.deploy_url }}"
+      url: "${{ steps.deploy_url.outputs.deploy_url }}"
     defaults:
       run:
         working-directory: /app
@@ -20,7 +20,6 @@ jobs:
       - id: checkout
         uses: actions/checkout@v2
       - run: cp -ar $GITHUB_WORKSPACE/* .
-      - run: find . -type f
       - run: npm run build
       - run: find dist/ -type f
       - id: deploy
@@ -29,7 +28,9 @@ jobs:
           NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
           NETLIFY_SITE_ID: "${{ secrets.NETLIFY_SITE_ID }}"
         run: netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
-      - run: cat deploy.json
-      - run: set -eux && echo "::set-output name=deploy_id::$(jq -r '.deploy_id' deploy.json)"
-      - run: set -eux && echo "::set-output name=deploy_url::$(jq -r '.deploy_url' deploy.json)"
-      - run: set -eux && echo "::set-output name=logs::$(jq -r '.logs' deploy.json)"
+      - name: deploy_id
+        run: echo -n "::set-output name=out::$(jq -r '.deploy_id' deploy.json)"
+      - name: deploy_url
+        run: echo -n "::set-output name=out::$(jq -r '.deploy_url' deploy.json)"
+      - name: logs
+        run: echo -n "::set-output name=out::$(jq -r '.logs' deploy.json)"
