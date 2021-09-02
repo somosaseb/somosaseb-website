@@ -11,6 +11,10 @@ RUN set -eux && \
     npm install --package-lock && \
     npm install -g netlify-cli
 
+RUN set -eux && \
+    apt update && \
+    apt install jq --yes
+
 FROM frontend-deps
 
 COPY . /app
