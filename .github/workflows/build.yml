@@ -17,15 +17,15 @@ jobs:
       image: ghcr.io/somosaseb/somosaseb-website/base:latest
     environment:
       name: Default
-      url: "${{ steps.outputs.outputs.deploy_url }}"
+      url: ${{ steps.output_step.outputs.deploy_url }}
     defaults:
       run:
         shell: bash
         working-directory: /app
     outputs:
-      deploy_id: ${{ steps.outputs.outputs.deploy_id }}
-      deploy_url: ${{ steps.outputs.outputs.deploy_url }}
-      logs_url: ${{ steps.outputs.outputs.logs_url }}
+      deploy_id: ${{ steps.output_step.outputs.deploy_id }}
+      deploy_url: ${{ steps.output_step.outputs.deploy_url }}
+      logs_url: ${{ steps.output_step.outputs.logs_url }}
     steps:
       - id: checkout
         uses: actions/checkout@v2
@@ -42,16 +42,17 @@ jobs:
         run: netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
 
       - name: Set outputs
-        id: outputs
+        id: output_step
         run: |
           deploy_id="$(jq -r '.deploy_id' deploy.json)"
           deploy_url="$(jq -r '.deploy_url' deploy.json)"
           logs_url="$(jq -r '.logs' deploy.json)"
 
-          echo "::debug:: deploy_id=$deploy_id"
-          echo "::debug:: deploy_id=$deploy_url"
-          echo "::debug:: deploy_id=$logs_url"
+          echo "deploy_id = $deploy_id"
+          echo "deploy_url = $deploy_url"
+          echo "logs_url = $logs_url"
 
           echo "::set-output name=deploy_id::$deploy_id"
           echo "::set-output name=deploy_url::$deploy_url"
           echo "::set-output name=logs_url::$logs_url"
+          echo "::set-output name=action_fruit::strawberry"
