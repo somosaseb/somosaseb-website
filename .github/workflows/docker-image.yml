@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: docker/setup-qemu-action@v1
       - uses: docker/setup-buildx-action@v1
@@ -19,7 +20,7 @@ jobs:
         with:
           push: true
           context: .
-          target: base
+          target: frontend-deps
           tags: ghcr.io/somosaseb/somosaseb-website/base:latest
           cache-from: type=registry,ref=ghcr.io/somosaseb/somosaseb-website/base:latest
           cache-to: type=inline
