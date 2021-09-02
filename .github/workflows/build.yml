@@ -19,7 +19,7 @@ jobs:
     steps:
       - id: checkout
         uses: actions/checkout@v2
-      - run: cp -ar $GITHUB_WORKSPACE/ .
+      - run: cp -ar $GITHUB_WORKSPACE/* .
       - run: find . -type f
       - run: npm run build
       - run: find dist/ -type f
