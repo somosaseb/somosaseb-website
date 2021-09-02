@@ -39,10 +39,18 @@ jobs:
           NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
           NETLIFY_SITE_ID: "${{ secrets.NETLIFY_SITE_ID }}"
         run: netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
-      -
-        name: outputs
+      - name: Set outputs
+        id: outputs
         run: |
           set -eu
-          echo "::set-output name=deploy_id::$(jq -r '.deploy_id' deploy.json)"
-          echo "::set-output name=deploy_url::$(jq -r '.deploy_url' deploy.json)"
-          echo "::set-output name=logs_url::$(jq -r '.logs' deploy.json)"
+          deploy_id="$(jq -r '.deploy_id' deploy.json)"
+          deploy_url="$(jq -r '.deploy_url' deploy.json)"
+          logs_url="$(jq -r '.logs' deploy.json)"
+
+          echo "::debug:: deploy_id=$deploy_id"
+          echo "::debug:: deploy_id=$deploy_url"
+          echo "::debug:: deploy_id=$logs_url"
+
+          echo "::set-output name=deploy_id::$deploy_id"
+          echo "::set-output name=deploy_url::$deploy_url"
+          echo "::set-output name=logs_url::$logs_url"
