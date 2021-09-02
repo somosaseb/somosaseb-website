@@ -13,9 +13,12 @@ jobs:
     environment:
       name: default
       url: "${{ steps.deploy.outputs.deploy_url }}"
+    defaults:
+      run:
+        working-directory: /app
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci
+      - run: npm install --package-lock
       - run: npm run build
       - run: find dist/ -type f
       - id: deploy
