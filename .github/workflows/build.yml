@@ -8,24 +8,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/somosaseb/somosaseb-website/base:latest
     environment:
       name: default
       url: "${{ steps.deploy.outputs.deploy_url }}"
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/.npm
-            node_modules
-          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - run: npm install -g netlify-cli
       - run: npm ci
       - run: npm run build
       - run: find dist/ -type f
@@ -35,6 +24,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
           NETLIFY_SITE_ID: "${{ secrets.NETLIFY_SITE_ID }}"
         run: netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
-      - run: echo "::set-output name=deploy_id::$(jq -r '.deploy_id' deploy.json)"
-      - run: echo "::set-output name=deploy_url::$(jq -r '.deploy_url' deploy.json)"
-      - run: echo "::set-output name=logs::$(jq -r '.logs' deploy.json)"
+      - run: cat deploy.json
+      - run: set -eux && echo "::set-output name=deploy_id::$(jq -r '.deploy_id' deploy.json)"
+      - run: set -eux && echo "::set-output name=deploy_url::$(jq -r '.deploy_url' deploy.json)"
+      - run: set -eux && echo "::set-output name=logs::$(jq -r '.logs' deploy.json)"
