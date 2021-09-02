@@ -16,7 +16,7 @@ jobs:
     container:
       image: ghcr.io/somosaseb/somosaseb-website/base:latest
     environment:
-      name: default
+      name: Default
       url: "${{ steps.outputs.outputs.deploy_url }}"
     defaults:
       run:
@@ -32,6 +32,7 @@ jobs:
       - run: cp -ar $GITHUB_WORKSPACE/* .
       - run: npm run build
       - run: find dist/ -type f
+
       -
         id: deploy
         name: Deploy to Netlify
@@ -39,10 +40,10 @@ jobs:
           NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
           NETLIFY_SITE_ID: "${{ secrets.NETLIFY_SITE_ID }}"
         run: netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
+
       - name: Set outputs
         id: outputs
         run: |
-          set -eu
           deploy_id="$(jq -r '.deploy_id' deploy.json)"
           deploy_url="$(jq -r '.deploy_url' deploy.json)"
           logs_url="$(jq -r '.logs' deploy.json)"
