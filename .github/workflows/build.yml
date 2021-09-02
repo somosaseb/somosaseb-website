@@ -34,9 +34,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
           NETLIFY_SITE_ID: "${{ secrets.NETLIFY_SITE_ID }}"
-        run: |
-          netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
-          echo
-          echo "::set-output name=deploy_id::$(jq -r '.deploy_id' deploy.json)"
-          echo "::set-output name=deploy_url::$(jq -r '.deploy_url' deploy.json)"
-          echo "::set-output name=logs::$(jq -r '.logs' deploy.json)"
+        run: netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
+      - run: echo "::set-output name=deploy_id::$(jq -r '.deploy_id' deploy.json)"
+      - run: echo "::set-output name=deploy_url::$(jq -r '.deploy_url' deploy.json)"
+      - run: echo "::set-output name=logs::$(jq -r '.logs' deploy.json)"
