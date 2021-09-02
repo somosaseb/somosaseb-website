@@ -20,11 +20,18 @@ jobs:
       url: "${{ steps.outputs.outputs.deploy_url }}"
     defaults:
       run:
+        shell: bash
         working-directory: /app
     outputs:
-      deploy_id: ${{ steps.outputs.outputs.deploy_id }}
-      deploy_url: ${{ steps.outputs.outputs.deploy_url }}
-      logs_url: ${{ steps.outputs.outputs.logs_url }}
+      deploy_id:
+        description: Deploy ID
+        value: ${{ steps.outputs.outputs.deploy_id }}
+      deploy_url:
+        description: Deploy URL
+        valueL: ${{ steps.outputs.outputs.deploy_url }}
+      logs_url:
+        description: Deploy Logs URL
+        valueL: ${{ steps.outputs.outputs.logs_url }}
     steps:
       - id: checkout
         uses: actions/checkout@v2
