@@ -28,10 +28,10 @@ jobs:
         value: ${{ steps.outputs.outputs.deploy_id }}
       deploy_url:
         description: Deploy URL
-        valueL: ${{ steps.outputs.outputs.deploy_url }}
+        value: ${{ steps.outputs.outputs.deploy_url }}
       logs_url:
         description: Deploy Logs URL
-        valueL: ${{ steps.outputs.outputs.logs_url }}
+        value: ${{ steps.outputs.outputs.logs_url }}
     steps:
       - id: checkout
         uses: actions/checkout@v2
