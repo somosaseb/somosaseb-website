@@ -21,6 +21,10 @@ jobs:
     defaults:
       run:
         working-directory: /app
+    outputs:
+      deploy_id: ${{ steps.outputs.outputs.deploy_id }}
+      deploy_url: ${{ steps.outputs.outputs.deploy_url }}
+      logs_url: ${{ steps.outputs.outputs.logs_url }}
     steps:
       - id: checkout
         uses: actions/checkout@v2
