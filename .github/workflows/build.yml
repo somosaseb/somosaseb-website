@@ -15,9 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/somosaseb/somosaseb-website/base:latest
-    environment:
-      name: Default
-      url: ${{ steps.output_step.outputs.deploy_url }}
+
     defaults:
       run:
         shell: bash
