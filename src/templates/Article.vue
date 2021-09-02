@@ -1,15 +1,22 @@
 <template>
   <Layout>
     <div class="container">
-      <img height="500px" :src="$page.article.mainImage.src" />
+      <img
+        class="img-fluid mx-auto d-block"
+        height="500px"
+        :src="$page.article.mainImage.src"
+      />
+
       <div class="row justify-content-center">
         <article class="col-md-8">
-          <h3 class="mx-0 px-xs-5">
+          <h3 class="mx-0 px-xs-5 pt-4">
             {{ $page.article.title }}
           </h3>
 
-          <span class="px-xs-5"> Date: {{ $page.article.date }} </span>
-          <div class="pa-xs-5 body-1">
+          <span class="px-xs-5 pt-2 fw-lighter">
+            Date: {{ $page.article.date }}
+          </span>
+          <div class="pa-xs-5 body-1 pt-4">
             <div v-html="$page.article.content"></div>
           </div>
         </article>
