@@ -3,40 +3,63 @@ name: Build and Deploy
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - '.github/workflows/docker-image.yml'
+      - '.gitignore'
+      - '*.md'
+      - 'Dockerfile'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: default
-      url: "${{ steps.deploy.outputs.deploy_url }}"
+    container:
+      image: ghcr.io/somosaseb/somosaseb-website/base:latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: /app
+    outputs:
+      deploy_id: ${{ steps.output_step.outputs.deploy_id }}
+      deploy_url: ${{ steps.output_step.outputs.deploy_url }}
+      logs_url: ${{ steps.output_step.outputs.logs_url }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/.npm
-            node_modules
-          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - run: npm install -g netlify-cli
-      - run: npm ci
+      - id: checkout
+        uses: actions/checkout@v2
+      - run: cp -ar $GITHUB_WORKSPACE/* .
       - run: npm run build
       - run: find dist/ -type f
-      - id: deploy
+
+      -
+        id: deploy
         name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
           NETLIFY_SITE_ID: "${{ secrets.NETLIFY_SITE_ID }}"
+        run: netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
+
+      - name: Set outputs
+        id: output_step
         run: |
-          netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
-          echo
-          echo "::set-output name=deploy_id::$(jq -r '.deploy_id' deploy.json)"
-          echo "::set-output name=deploy_url::$(jq -r '.deploy_url' deploy.json)"
-          echo "::set-output name=logs::$(jq -r '.logs' deploy.json)"
+          deploy_id="$(jq -r '.deploy_id' deploy.json)"
+          deploy_url="$(jq -r '.deploy_url' deploy.json)"
+          logs_url="$(jq -r '.logs' deploy.json)"
+
+          echo "deploy_id = $deploy_id"
+          echo "deploy_url = $deploy_url"
+          echo "logs_url = $logs_url"
+
+          echo "::set-output name=deploy_id::$deploy_id"
+          echo "::set-output name=deploy_url::$deploy_url"
+          echo "::set-output name=logs_url::$logs_url"
+          echo "::set-output name=action_fruit::strawberry"
+
+      - name: Deployment
+        uses: shopify/github-deployment-action@v1
+        if: always()
+        with:
+          token: ${{ github.token }}
+          environment: 'Default'
+          description: ${{ github.event.head_commit.message }}
+          preview_url: ${{ steps.output_step.outputs.deploy_url }}
