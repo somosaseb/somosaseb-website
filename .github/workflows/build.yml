@@ -13,9 +13,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: Default
     container:
       image: ghcr.io/somosaseb/somosaseb-website/base:latest
-
     defaults:
       run:
         shell: bash
@@ -30,7 +30,6 @@ jobs:
       - run: cp -ar $GITHUB_WORKSPACE/* .
       - run: npm run build
       - run: find dist/ -type f
-
       -
         id: deploy
         name: Deploy to Netlify
@@ -38,8 +37,8 @@ jobs:
           NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN }}"
           NETLIFY_SITE_ID: "${{ secrets.NETLIFY_SITE_ID }}"
         run: netlify deploy --site=$NETLIFY_SITE_ID --dir=dist --prod --json | tee deploy.json
-
-      - name: Set outputs
+      -
+        name: Set outputs
         id: output_step
         run: |
           deploy_id="$(jq -r '.deploy_id' deploy.json)"
@@ -54,8 +53,8 @@ jobs:
           echo "::set-output name=deploy_url::$deploy_url"
           echo "::set-output name=logs_url::$logs_url"
           echo "::set-output name=action_fruit::strawberry"
-
-      - name: Deployment
+      -
+        name: Deployment
         uses: shopify/github-deployment-action@v1
         if: always()
         with:
