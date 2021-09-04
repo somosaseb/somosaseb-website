@@ -5,11 +5,13 @@ on:
     branches: [master]
     paths-ignore:
       - '.github/workflows/*.yml'
-      - '!.github/workflows/staging'
+      - '!.github/workflows/staging.yml'
       - '.gitignore'
       - '*.md'
       - 'Dockerfile'
   workflow_dispatch:
+
+permissions: write-all
 
 jobs:
   build:
