@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       -
-        run:
+        run: |
           cp -ar $GITHUB_WORKSPACE/* .
           npm run build
           find dist/ -type f
