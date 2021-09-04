@@ -4,7 +4,8 @@ on:
   push:
     branches: [master]
     paths-ignore:
-      - '.github/workflows/docker-image.yml'
+      - '.github/workflows/*.yml'
+      - '!.github/workflows/staging'
       - '.gitignore'
       - '*.md'
       - 'Dockerfile'
