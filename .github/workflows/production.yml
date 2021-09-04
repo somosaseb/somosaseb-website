@@ -19,5 +19,6 @@ jobs:
           workflow_conclusion: success
           branch: master
           name: website
+          path: dist/
       -
         run: find . -type f

@@ -33,6 +33,14 @@ jobs:
           npm run build
           find dist/ -type f
       -
+        id: deployment
+        name: Create Deployment
+        uses: chrnorm/deployment-action@releases/v1
+        if: always()
+        with:
+          token: ${{ github.token }}
+          environment: 'Default'
+      -
         id: deploy
         name: Deploy to Netlify
         env:
@@ -56,14 +64,23 @@ jobs:
           echo "::set-output name=logs_url::$logs_url"
           echo "::set-output name=action_fruit::strawberry"
       -
-        name: Deployment
-        uses: shopify/github-deployment-action@v1
-        if: always()
+        name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
         with:
-          token: ${{ github.token }}
-          environment: 'Default'
-          description: ${{ github.event.head_commit.message }}
-          preview_url: ${{ steps.output_step.outputs.deploy_url }}
+          token: "${{ github.token }}"
+          target_url: ${{ steps.output_step.outputs.deploy_url }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      -
+        name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target_url: ${{ steps.output_step.outputs.deploy_url }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       -
         if: success()
         name: Upload files from ${{ steps.output_step.outputs.deploy_url }}
