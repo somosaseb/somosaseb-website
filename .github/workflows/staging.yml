@@ -68,6 +68,6 @@ jobs:
         name: Upload files from ${{ steps.output_step.outputs.deploy_url }}
         uses: actions/upload-artifact@v2
         with:
-          name: website-${{ steps.output_step.outputs.deploy_id }}
+          name: website
           path: /app/dist/
           retention-days: 30
