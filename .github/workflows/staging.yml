@@ -65,9 +65,9 @@ jobs:
           preview_url: ${{ steps.output_step.outputs.deploy_url }}
       -
         if: success()
-        name: Upload files for ${{ steps.output_step.outputs.deploy_url }}
+        name: Upload files from ${{ steps.output_step.outputs.deploy_url }}
         uses: actions/upload-artifact@v2
         with:
-          name: website
+          name: website-${{ steps.output_step.outputs.deploy_id }}
           path: /app/dist/
           retention-days: 30
