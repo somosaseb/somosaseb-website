@@ -25,11 +25,12 @@ jobs:
       deploy_url: ${{ steps.output_step.outputs.deploy_url }}
       logs_url: ${{ steps.output_step.outputs.logs_url }}
     steps:
-      - id: checkout
-        uses: actions/checkout@v2
-      - run: cp -ar $GITHUB_WORKSPACE/* .
-      - run: npm run build
-      - run: find dist/ -type f
+      - uses: actions/checkout@v2
+      -
+        run:
+          cp -ar $GITHUB_WORKSPACE/* .
+          npm run build
+          find dist/ -type f
       -
         id: deploy
         name: Deploy to Netlify
@@ -64,6 +65,7 @@ jobs:
           preview_url: ${{ steps.output_step.outputs.deploy_url }}
       -
         if: success()
+        name: Upload files for ${{ steps.output_step.outputs.deploy_url }}
         uses: actions/upload-artifact@v2
         with:
           name: website
