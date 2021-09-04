@@ -17,7 +17,6 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: staging.yml
           workflow_conclusion: success
-          check_artifacts:  false
           branch: master
           name: website
           path: /app/dist/
