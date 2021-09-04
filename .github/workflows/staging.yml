@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build Staging
 
 on:
   push:
@@ -61,4 +61,11 @@ jobs:
           token: ${{ github.token }}
           environment: 'Default'
           description: ${{ github.event.head_commit.message }}
-          preview_url: ${{ steps.output_step.outputs.deploy_url }}
+          preview_url: ${{ steps.output_step.outputs.deploy_url }}-
+      -
+        if: success()
+        uses: actions/upload-artifact@v2
+        with:
+          name: website
+          path: dist
+          retention-days: 30
