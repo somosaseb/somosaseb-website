@@ -61,7 +61,7 @@ jobs:
           token: ${{ github.token }}
           environment: 'Default'
           description: ${{ github.event.head_commit.message }}
-          preview_url: ${{ steps.output_step.outputs.deploy_url }}-
+          preview_url: ${{ steps.output_step.outputs.deploy_url }}
       -
         if: success()
         uses: actions/upload-artifact@v2
