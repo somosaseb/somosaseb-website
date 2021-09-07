@@ -16,7 +16,7 @@
           <span class="px-xs-5 pt-2 fw-lighter">
             Date: {{ $page.article.date }}
           </span>
-          <div class="pa-xs-5 body-1 pt-4">
+          <div class="pa-xs-5 body-1 pt-3">
             <div v-html="$page.article.content"></div>
           </div>
         </article>
@@ -46,6 +46,6 @@ export default {
 
 <style scoped>
 h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 </style>
