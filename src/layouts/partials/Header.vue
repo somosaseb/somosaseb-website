@@ -44,10 +44,10 @@
       <div
         class="button-actions gab-2 d-flex flex-column flex-xl-row mt-4 mt-md-0 col-md-3 justify-content-center justify-content-md-end"
       >
-        <button type="button" class="btn btn-accent btn-md ">
+        <button type="button" class="btn btn-accent btn-md">
           Registrarte
         </button>
-        <button type="button" class="btn btn-primary btn-md mt-2 "> Miembros  </button>
+        <button type="button" class="btn btn-primary btn-md  "> Miembros  </button>
       </div>
     </div>
   </header>

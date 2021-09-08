@@ -3,12 +3,12 @@
     <div class="container">
       <div class="row gx-5">
         <div class="col">
-          <div class="mb-5">
-            <a href="#" class="btn btn-primary">Envia tus noticias</a>
+          <div class="mb-5 d-flex flex-column  pt-2   mb-2 ">
+            <a href="#" class="btn btn-primary  bd-highlight">Envia tus noticias</a>
           </div>
         </div>
         <div class="col-sm-7">
-          <div class="mb-4">
+          <div class="mb-4 pt-2">
             <a href="#" class="btn btn-sm btn-accent me-2">Lo más popular</a>
             <a href="#" class="btn btn-sm btn-secondary">Recientes</a>
           </div>
