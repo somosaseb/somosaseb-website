@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row gx-5">
         <div class="col">
-          <div class="mb-5 d-flex flex-column  pt-2   mb-2 ">
+          <div class="mb-5 d-flex flex-column m-4 pt-2   mb-2 ">
             <a href="#" class="btn btn-primary  bd-highlight">Envia tus noticias</a>
           </div>
         </div>
