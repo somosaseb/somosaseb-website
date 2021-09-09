@@ -1,13 +1,8 @@
 <template>
   <Layout>
-    <div class="container">
+    <div class="container mt-4">
       <div class="row gx-5">
-        <div class="col">
-          <div class="mb-5 d-flex flex-column m-4 pt-2   mb-2 ">
-            <a href="#" class="btn btn-primary  bd-highlight">Envia tus noticias</a>
-          </div>
-        </div>
-        <div class="col-sm-7">
+        <div class="col-12 col-lg-9">
           <div class="mb-4 pt-2">
             <a href="#" class="btn btn-sm btn-accent me-2">Lo más popular</a>
             <a href="#" class="btn btn-sm btn-secondary">Recientes</a>
@@ -21,7 +16,11 @@
             :imageUrl="item.enclosure.link"
           />
         </div>
-        <div class="col">
+        <div class="col-12 col-lg-3">
+          <div class="mb-4 d-flex flex-column pt-2  ">
+            <a href="#" class="btn btn-primary  bd-highlight">Envia tus noticias</a>
+          </div>
+
           <div class="rounded-3 bg-accent p-4">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.

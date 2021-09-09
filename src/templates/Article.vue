@@ -12,10 +12,11 @@
           <h3 class="mx-0 px-xs-5 pt-4">
             {{ $page.article.title }}
           </h3>
-
+          <p>
           <span class="px-xs-5 pt-2 fw-lighter">
             Date: {{ $page.article.date }}
           </span>
+          </p>
           <div class="pa-xs-5 body-1 pt-3">
             <div v-html="$page.article.content"></div>
           </div>
@@ -46,6 +47,12 @@ export default {
 
 <style scoped>
 h3 {
+  font-weight: 800;
   font-size: 2.5rem;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+article > div {
+  font-size: 1.11rem;
 }
 </style>

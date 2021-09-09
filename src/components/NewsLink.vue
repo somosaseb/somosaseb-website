@@ -37,6 +37,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a {
+  text-decoration: none;
+}
+
 .item-title {
   font-weight: 700;
   font-size: 1.25rem;
@@ -61,6 +65,9 @@ export default {
   text-align: center;
 
   img {
+    height: auto;
+    width: 100%;
+
     @media (min-width: 767.98px) {
       background: white;
       width: 10rem;
