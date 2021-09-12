@@ -39,15 +39,22 @@
             <g-link class="nav-link" to="/news/">Noticias</g-link>
           </li>
         </ul>
+        <div v-if="context.auth !== null">
+          {{ context.auth.user.email }}
+          <a @click="context.logout" class="btn btn-accent btn-md">
+            Logout
+          </a>
+        </div>
         <div
+          v-else
           class="button-actions gap-2 d-flex flex-column flex-xl-row justify-content-center justify-content-md-end"
         >
-          <button type="button" class="btn btn-accent btn-md">
+          <g-link to="/login/" class="btn btn-accent btn-md">
             Registrarte
-          </button>
-          <button type="button" class="btn btn-primary btn-md mt-2 mt-xl-0">
-            Miembros
-          </button>
+          </g-link>
+          <g-link to="/login/" class="btn btn-primary btn-md mt-2 mt-xl-0">
+            Ingresar
+          </g-link>
         </div>
       </nav>
     </div>
@@ -58,6 +65,7 @@
 import Logo from "../../components/Logo.vue";
 import MenuSvg from "../../assets/img/menu.svg";
 export default {
+  inject: ["context"],
   components: { Logo, MenuSvg },
 };
 </script>

@@ -10,6 +10,7 @@ import NewsLink from "./components/NewsLink.vue";
 import EventSummary from "./components/EventSummary.vue";
 import StaffList from "./components/StaffList.vue";
 import Faq from "./components/Faq.vue";
+import ReactiveProvide from "vue-reactive-provide";
 
 import "./assets/scss/main.scss";
 
@@ -26,6 +27,8 @@ export default function(Vue, { router, head, isClient }) {
       document.querySelector(selector).classList.toggle(className);
     },
   };
+
+  Vue.use(ReactiveProvide);
 
   Vue.component("Layout", DefaultLayout);
   Vue.component("BlogSummary", BlogSummary);
