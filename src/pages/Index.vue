@@ -1,9 +1,6 @@
 <template>
   <Layout>
-    <Banner
-      imageUrl="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1750&q=80"
-      class="mb-5"
-    >
+    <Banner :image="mainBanner" class="mb-5">
       The Center is a network of 9 workspaces, from 200 to 3,700 sqft, Build and
       Designed to support Personal and Businesses in the Creative World.
     </Banner>
@@ -41,9 +38,14 @@
 </template>
 
 <script>
+const mainBanner = require(`assets-loader!~/assets/media/aseb-sincroniza-2021.jpg`);
+
 export default {
   metaInfo: {
     title: "Inicio",
+  },
+  data() {
+    return { mainBanner };
   },
 };
 </script>

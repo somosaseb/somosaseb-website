@@ -7,7 +7,7 @@
     <div v-if="hasChildren" class="container">
       <div class="row">
         <div class="col-lg-6">
-          <div class="bg-dark p-4 rounded">
+          <div class="p-4 rounded" style="background-color: rgba(0,0,0,0.75)">
             <h2 class="fs-4 lh-base fw-light text-white">
               <slot />
             </h2>
@@ -21,7 +21,7 @@
 <script>
 export default {
   props: {
-    imageUrl: String,
+    image: String | Object,
     container: {
       type: Boolean,
       default() {
@@ -32,9 +32,11 @@ export default {
   computed: {
     bannerStyles() {
       return `
-        background-image: url('${this.imageUrl}');
-        background-size: cover;
-      `;
+          background-image: url('${
+            typeof this.image === "object" ? this.image.src : this.image
+          }');
+          background-size: cover;
+        `;
     },
     hasChildren() {
       return !!this.$slots.default;

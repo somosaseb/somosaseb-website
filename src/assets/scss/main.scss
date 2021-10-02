@@ -69,6 +69,11 @@ $card-border-radius: 0;
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;700&display=swap");
 
+html,
+body {
+  font-size: 15px;
+}
+
 body {
   background-color: #fbf9f6;
 }

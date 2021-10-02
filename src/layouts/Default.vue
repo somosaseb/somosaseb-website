@@ -25,6 +25,25 @@ import Footer from "./partials/Footer.vue";
 
 export default {
   components: { Header, Footer },
+  reactiveProvide: {
+    name: "context",
+    include: ["auth", "logout"],
+  },
+  data() {
+    return { auth: null };
+  },
+  async mounted() {
+    const data = localStorage.getItem("auth");
+    if (data !== null) {
+      this.auth = JSON.parse(data);
+    }
+  },
+  methods: {
+    logout() {
+      localStorage.setItem("auth", null);
+      this.auth = null;
+    },
+  },
 };
 </script>
 
