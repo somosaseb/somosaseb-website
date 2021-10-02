@@ -1,7 +1,7 @@
 <template>
   <header class="navbar navbar-expand-lg border-bottom py-3">
     <div class="container font-raleway fs-5">
-      <div class="col-12 row mx-0 col-md-2">
+      <div class="col-12 row mx-0 col-lg-2">
         <a class="navbar-brand col-auto flex-grow-1 d-flex" href="/">
           <Logo />
         </a>
@@ -47,12 +47,12 @@
         </div>
         <div
           v-else
-          class="button-actions gap-2 d-flex flex-column flex-xl-row justify-content-center justify-content-md-end"
+          class="button-actions gap-2 d-flex flex-column flex-lg-row justify-content-center justify-content-md-end"
         >
           <g-link to="/login/" class="btn btn-accent btn-md">
             Registrarte
           </g-link>
-          <g-link to="/login/" class="btn btn-primary btn-md mt-2 mt-xl-0">
+          <g-link to="/login/" class="btn btn-primary btn-md mt-2 mt-lg-0">
             Ingresar
           </g-link>
         </div>
