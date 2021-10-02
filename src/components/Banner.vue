@@ -21,7 +21,7 @@
 <script>
 export default {
   props: {
-    imageUrl: String,
+    image: String | Object,
     container: {
       type: Boolean,
       default() {
@@ -32,9 +32,11 @@ export default {
   computed: {
     bannerStyles() {
       return `
-        background-image: url('${this.imageUrl}');
-        background-size: cover;
-      `;
+          background-image: url('${
+            typeof this.image === "object" ? this.image.src : this.image
+          }');
+          background-size: cover;
+        `;
     },
     hasChildren() {
       return !!this.$slots.default;
